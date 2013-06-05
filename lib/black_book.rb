@@ -4,9 +4,6 @@ require "black_book/used_cars"
 require "black_book/errors"
 require "symboltable"
 
-require "ap"
-require "debugger"
-
 module BlackBook
   extend self
 
