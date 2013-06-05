@@ -5,8 +5,8 @@ module BlackBook
         "https://www.blackbookws.com/UsedCarWSX.asmx?WSDL"
       end
 
-      def current_values_for(vin, mileage, state, options={})
-        request(:get_current_vin_values, {
+      def current_valuation_for(vin, mileage, state, options={})
+        response = request(:get_current_vin_values, {
           "sCountryCode" => "U",
           "sFrequencyCode" => "W",
           "sVIN" => vin,
@@ -20,6 +20,15 @@ module BlackBook
           "bReturnMileage" => "true",
           "bReturnAddDeducts" => "true"
         })
+
+        envelope = response.hash[:envelope]
+
+        raise VinNotFound if envelope[:header][:user_credentials][:returncode] == "20"
+        raise BlackBookError if envelope[:header][:user_credentials][:returncode] != "0"
+
+        envelope[:body][:current_vin_values_response][:current_vin_values_result]
+      rescue Savon::SOAPFault => e
+        raise BlackBookError.new e
       end
     end
   end

@@ -1,6 +1,7 @@
 require "black_book/version"
 require "black_book/base_request"
 require "black_book/used_cars"
+require "black_book/errors"
 require "symboltable"
 
 require "ap"

@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.blackbookws.com/UsedCarWSX.asmx
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="https://blackbookws.com/UsedCarWSX" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"><env:Header><UserCredentials xmlns="https://blackbookws.com/UsedCarWSX">
+                    <userid>xxxx</userid>
+                    <password>xxxx</password>
+                    <customer/>
+                    <producttype>W</producttype>
+                    <returncode>0</returncode>
+                    <returnmessage/>
+                  </UserCredentials></env:Header><env:Body><tns:CurrentVINValues><tns:sCountryCode>U</tns:sCountryCode><tns:sFrequencyCode>W</tns:sFrequencyCode><tns:sVIN>NOT_FOUND</tns:sVIN><tns:iMileage>50000</tns:iMileage><tns:sState>IL</tns:sState><tns:iExtraCleanAddDeductAdj>0</tns:iExtraCleanAddDeductAdj><tns:iCleanAddDeductAdj>0</tns:iCleanAddDeductAdj><tns:iAverageAddDeductAdj>0</tns:iAverageAddDeductAdj><tns:iRoughAddDeductAdj>0</tns:iRoughAddDeductAdj><tns:bFillDrilldown>false</tns:bFillDrilldown><tns:bReturnMileage>true</tns:bReturnMileage><tns:bReturnAddDeducts>true</tns:bReturnAddDeducts></tns:CurrentVINValues></env:Body></env:Envelope>
+    headers:
+      Soapaction:
+      - '"https://blackbookws.com/UsedCarWSX/CurrentVINValues"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '1183'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Wed, 05 Jun 2013 15:54:25 GMT
+      Content-Length:
+      - '458'
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Header><UserCredentials
+        xmlns="https://blackbookws.com/UsedCarWSX"><userid>xxxx</userid><password>xxxx</password><customer
+        /><producttype>W</producttype><returncode>20</returncode><returnmessage>VIN
+        not found</returnmessage></UserCredentials></soap:Header><soap:Body><CurrentVINValuesResponse
+        xmlns="https://blackbookws.com/UsedCarWSX"><CurrentVINValuesResult><valueArray
+        /></CurrentVINValuesResult></CurrentVINValuesResponse></soap:Body></soap:Envelope>
+    http_version:
+  recorded_at: Wed, 05 Jun 2013 15:54:28 GMT
+recorded_with: VCR 2.5.0
