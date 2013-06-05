@@ -7,9 +7,9 @@ describe BlackBook::UsedCars do
 
   describe "current valuation for a given VIN, mileage and state" do
     before do
-      BlackBook.configure do |c|
-        c.user_id = "xxxx"
-        c.password = "xxxx"
+      BlackBook.configure do |config|
+        config.user_id = "xxxx"
+        config.password = "xxxx"
       end
     end
 

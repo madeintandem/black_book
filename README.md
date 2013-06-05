@@ -1,6 +1,7 @@
 # BlackBook
 
-TODO: Write a gem description
+Provides a ruby interface for the Black Book's API.
+Read more about it here: http://www.blackbookusa.com
 
 ## Installation
 
@@ -18,7 +19,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To start, use a configuration block to set up your credentials:
+
+    BlackBook.configure do |config|
+      config.user_id = "xxxx"
+      config.password = "xxxx"
+    end
 
 ## Contributing
 
