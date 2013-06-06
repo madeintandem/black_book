@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.blackbookws.com/UsedCarWSX.asmx
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?><env:Envelope xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:tns=\"https://blackbookws.com/UsedCarWSX\"
+        xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"><env:Header><UserCredentials
+        xmlns=\"https://blackbookws.com/UsedCarWSX\">\n            <userid>xxxxx</userid>\n
+        \           <password>xxxxx</password>\n            <customer/>\n            <producttype>W</producttype>\n
+        \           <returncode>0</returncode>\n            <returnmessage/>\n          </UserCredentials></env:Header><env:Body><tns:CurrentValues><tns:sCountryCode>U</tns:sCountryCode><tns:sFrequencyCode>W</tns:sFrequencyCode><tns:sYear>2013</tns:sYear><tns:sMake>Ford</tns:sMake><tns:sModel>Fiesta</tns:sModel><tns:sSeries>SE</tns:sSeries><tns:sStyle>4D
+        Hatchback</tns:sStyle><tns:iMileage>10000</tns:iMileage><tns:sState>IL</tns:sState><tns:iExtraCleanAddDeductAdj>0</tns:iExtraCleanAddDeductAdj><tns:iCleanAddDeductAdj>0</tns:iCleanAddDeductAdj><tns:iAverageAddDeductAdj>0</tns:iAverageAddDeductAdj><tns:iRoughAddDeductAdj>0</tns:iRoughAddDeductAdj><tns:bFillDrilldown>false</tns:bFillDrilldown><tns:bReturnMileage>true</tns:bReturnMileage><tns:bReturnAddDeducts>true</tns:bReturnAddDeducts></tns:CurrentValues></env:Body></env:Envelope>"
+    headers:
+      Soapaction:
+      - ! '"https://blackbookws.com/UsedCarWSX/CurrentValues"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '1298'
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Server:
+      - Microsoft-IIS/7.5
+      X-Aspnet-Version:
+      - 2.0.50727
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Thu, 06 Jun 2013 17:34:30 GMT
+      Content-Length:
+      - '6690'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Header><UserCredentials
+        xmlns="https://blackbookws.com/UsedCarWSX"><userid>xxxxx</userid><password>xxxxx</password><customer
+        /><producttype>W</producttype><returncode>0</returncode><returnmessage>success
+        - (getValues)</returnmessage></UserCredentials></soap:Header><soap:Body><CurrentValuesResponse
+        xmlns="https://blackbookws.com/UsedCarWSX"><CurrentValuesResult><valueArray><BBValue><country>U</country><frequency>W</frequency><year>2013</year><make>Ford</make><model>Fiesta</model><series>SE</series><style>4D
+        Hatchback</style><vin_year>D</vin_year><whole_xclean>13925</whole_xclean><whole_clean>13700</whole_clean><whole_avg>12825</whole_avg><whole_rough>11500</whole_rough><retail_xclean>16900</retail_xclean><retail_clean>16500</retail_clean><retail_avg>15450</retail_avg><retail_rough>13625</retail_rough><tradein_clean>13920</tradein_clean><tradein_avg>13145</tradein_avg><tradein_rough>10865</tradein_rough><finadv>13850</finadv><base_whole_xclean>14400</base_whole_xclean><base_whole_clean>13700</base_whole_clean><base_whole_avg>12700</base_whole_avg><base_whole_rough>11500</base_whole_rough><mileage_adj_whole_xclean>-475</mileage_adj_whole_xclean><mileage_adj_whole_clean>0</mileage_adj_whole_clean><mileage_adj_whole_avg>125</mileage_adj_whole_avg><mileage_adj_whole_rough>0</mileage_adj_whole_rough><ad_adj_whole_xclean>0</ad_adj_whole_xclean><ad_adj_whole_clean>0</ad_adj_whole_clean><ad_adj_whole_avg>0</ad_adj_whole_avg><ad_adj_whole_rough>0</ad_adj_whole_rough><reg_adj_whole_xclean>0</reg_adj_whole_xclean><reg_adj_whole_clean>0</reg_adj_whole_clean><reg_adj_whole_avg>0</reg_adj_whole_avg><reg_adj_whole_rough>0</reg_adj_whole_rough><base_retail_xclean>17375</base_retail_xclean><base_retail_clean>16500</base_retail_clean><base_retail_avg>15325</base_retail_avg><base_retail_rough>13625</base_retail_rough><mileage_adj_retail_xclean>-475</mileage_adj_retail_xclean><mileage_adj_retail_clean>0</mileage_adj_retail_clean><mileage_adj_retail_avg>125</mileage_adj_retail_avg><mileage_adj_retail_rough>0</mileage_adj_retail_rough><ad_adj_retail_xclean>0</ad_adj_retail_xclean><ad_adj_retail_clean>0</ad_adj_retail_clean><ad_adj_retail_avg>0</ad_adj_retail_avg><ad_adj_retail_rough>0</ad_adj_retail_rough><reg_adj_retail_xclean>0</reg_adj_retail_xclean><reg_adj_retail_clean>0</reg_adj_retail_clean><reg_adj_retail_avg>0</reg_adj_retail_avg><reg_adj_retail_rough>0</reg_adj_retail_rough><base_tradein_clean>13920</base_tradein_clean><base_tradein_avg>13020</base_tradein_avg><base_tradein_rough>10865</base_tradein_rough><mileage_adj_tradein_clean>0</mileage_adj_tradein_clean><mileage_adj_tradein_avg>125</mileage_adj_tradein_avg><mileage_adj_tradein_rough>0</mileage_adj_tradein_rough><ad_adj_tradein_clean>0</ad_adj_tradein_clean><ad_adj_tradein_avg>0</ad_adj_tradein_avg><ad_adj_tradein_rough>0</ad_adj_tradein_rough><reg_adj_tradein_clean>0</reg_adj_tradein_clean><reg_adj_tradein_avg>0</reg_adj_tradein_avg><reg_adj_tradein_rough>0</reg_adj_tradein_rough><base_finadv>14100</base_finadv><mileage_adj_finadv>-250</mileage_adj_finadv><ad_adj_finadv>0</ad_adj_finadv><reg_adj_finadv>0</reg_adj_finadv><resid12>0</resid12><resid24>0</resid24><resid30>0</resid30><resid36>0</resid36><resid42>0</resid42><resid48>0</resid48><resid60>0</resid60><resid72>0</resid72><base_resid12>0</base_resid12><base_resid24>0</base_resid24><base_resid30>0</base_resid30><base_resid36>0</base_resid36><base_resid42>0</base_resid42><base_resid48>0</base_resid48><base_resid60>0</base_resid60><base_resid72>0</base_resid72><mileage_adj_resid12>0</mileage_adj_resid12><mileage_adj_resid24>0</mileage_adj_resid24><mileage_adj_resid30>0</mileage_adj_resid30><mileage_adj_resid36>0</mileage_adj_resid36><mileage_adj_resid42>0</mileage_adj_resid42><mileage_adj_resid48>0</mileage_adj_resid48><mileage_adj_resid60>0</mileage_adj_resid60><mileage_adj_resid72>0</mileage_adj_resid72><ad_adj_resid12>0</ad_adj_resid12><ad_adj_resid24>0</ad_adj_resid24><ad_adj_resid30>0</ad_adj_resid30><ad_adj_resid36>0</ad_adj_resid36><ad_adj_resid42>0</ad_adj_resid42><ad_adj_resid48>0</ad_adj_resid48><ad_adj_resid60>0</ad_adj_resid60><ad_adj_resid72>0</ad_adj_resid72><end_of_term_value>0</end_of_term_value><region2>-50</region2><region3>75</region3><region4>-100</region4><region5>0</region5><region6>0</region6><ab_province>0</ab_province><bc_province>0</bc_province><mb_province>0</mb_province><nb_province>0</nb_province><nl_province>0</nl_province><nt_province>0</nt_province><ns_province>0</ns_province><nu_province>0</nu_province><on_province>0</on_province><pe_province>0</pe_province><qc_province>0</qc_province><sk_province>0</sk_province><yt_province>0</yt_province><group_number>0122</group_number><msrp>16200</msrp><ert>18140</ert><mileage_category>A</mileage_category><actualdate>6/3/2013</actualdate><full_vin>3FADP4EJD</full_vin><full_uvc>2013300147</full_uvc><model_number>P4E</model_number><veh_class>A</veh_class><wheel_base>0</wheel_base><taxable_hp>0</taxable_hp><gvw>0</gvw><bbr_score>0</bbr_score><bbf_rating>0</bbf_rating></BBValue></valueArray><mileageArray><BBMileage><vin_year>D</vin_year><beginrange>9001</beginrange><endrange>12000</endrange><extraclean>-475</extraclean><clean>0</clean><average>125</average><rough>0</rough><finadv>-250</finadv><mileage_cat>A</mileage_cat></BBMileage></mileageArray><addDeductArray><BBAddDeduct><uoc>87</uoc><description>Aluminum
+        Wheels</description><groupnum>0122</groupnum><extraclean>200</extraclean><clean>200</clean><average>200</average><rough>200</rough><auto>N</auto><res12>175</res12><res24>150</res24><res30>125</res30><res36>125</res36><res42>100</res42><res48>100</res48><res60>75</res60><res72>50</res72></BBAddDeduct><BBAddDeduct><uoc>12</uoc><description>Power
+        Moonroof</description><groupnum>0122</groupnum><extraclean>600</extraclean><clean>600</clean><average>600</average><rough>600</rough><auto>N</auto><res12>550</res12><res24>500</res24><res30>475</res30><res36>450</res36><res42>425</res42><res48>400</res48><res60>350</res60><res72>300</res72></BBAddDeduct><BBAddDeduct><uoc>05</uoc><description>w/o
+        Auto Trans</description><groupnum>0122</groupnum><extraclean>-900</extraclean><clean>-900</clean><average>-900</average><rough>-900</rough><auto>N</auto><res12>-850</res12><res24>-800</res24><res30>-775</res30><res36>-750</res36><res42>-725</res42><res48>-700</res48><res60>-650</res60><res72>-600</res72></BBAddDeduct></addDeductArray></CurrentValuesResult></CurrentValuesResponse></soap:Body></soap:Envelope>
+    http_version:
+  recorded_at: Thu, 06 Jun 2013 17:34:30 GMT
+recorded_with: VCR 2.5.0

@@ -7,10 +7,8 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - '*/*'
+      - ! '*/*'
       User-Agent:
       - Ruby
   response:
@@ -22,8 +20,6 @@ http_interactions:
       - private, max-age=0
       Content-Type:
       - text/xml; charset=utf-8
-      Vary:
-      - Accept-Encoding
       Server:
       - Microsoft-IIS/7.5
       X-Aspnet-Version:
@@ -31,12 +27,12 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Wed, 05 Jun 2013 15:54:33 GMT
+      - Thu, 06 Jun 2013 17:38:17 GMT
       Content-Length:
-      - '30705'
+      - '329867'
     body:
-      encoding: UTF-8
-      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"
         xmlns:tm=\"http://microsoft.com/wsdl/mime/textMatching/\" xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\"
         xmlns:mime=\"http://schemas.xmlsoap.org/wsdl/mime/\" xmlns:tns=\"https://blackbookws.com/UsedCarWSX\"
         xmlns:s=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\"
@@ -4174,5 +4170,5 @@ http_interactions:
         \     <http:address location=\"https://www.blackbookws.com/UsedCarWSX.asmx\"
         />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
     http_version: 
-  recorded_at: Wed, 05 Jun 2013 15:54:35 GMT
+  recorded_at: Thu, 06 Jun 2013 17:38:18 GMT
 recorded_with: VCR 2.5.0

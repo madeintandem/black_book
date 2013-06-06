@@ -10,14 +10,14 @@ http_interactions:
         xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\"><env:Header><UserCredentials
         xmlns=\"https://blackbookws.com/UsedCarWSX\">\n            <userid>xxxxx</userid>\n
         \           <password>xxxxx</password>\n            <customer/>\n            <producttype>W</producttype>\n
-        \           <returncode>0</returncode>\n            <returnmessage/>\n          </UserCredentials></env:Header><env:Body><tns:CurrentVINValues><tns:sCountryCode>U</tns:sCountryCode><tns:sFrequencyCode>W</tns:sFrequencyCode><tns:sVIN>NOT_FOUND</tns:sVIN><tns:iMileage>50000</tns:iMileage><tns:sState>IL</tns:sState><tns:iExtraCleanAddDeductAdj>0</tns:iExtraCleanAddDeductAdj><tns:iCleanAddDeductAdj>0</tns:iCleanAddDeductAdj><tns:iAverageAddDeductAdj>0</tns:iAverageAddDeductAdj><tns:iRoughAddDeductAdj>0</tns:iRoughAddDeductAdj><tns:bFillDrilldown>false</tns:bFillDrilldown><tns:bReturnMileage>true</tns:bReturnMileage><tns:bReturnAddDeducts>true</tns:bReturnAddDeducts></tns:CurrentVINValues></env:Body></env:Envelope>"
+        \           <returncode>0</returncode>\n            <returnmessage/>\n          </UserCredentials></env:Header><env:Body><tns:Series><tns:sCountryCode>U</tns:sCountryCode><tns:sYear>1864</tns:sYear><tns:sMake>Ford</tns:sMake><tns:sModel>Fiesta</tns:sModel></tns:Series></env:Body></env:Envelope>"
     headers:
       Soapaction:
-      - ! '"https://blackbookws.com/UsedCarWSX/CurrentVINValues"'
+      - ! '"https://blackbookws.com/UsedCarWSX/Series"'
       Content-Type:
       - text/xml;charset=UTF-8
       Content-Length:
-      - '1183'
+      - '759'
       Accept:
       - ! '*/*'
       User-Agent:
@@ -38,18 +38,17 @@ http_interactions:
       X-Powered-By:
       - ASP.NET
       Date:
-      - Thu, 06 Jun 2013 17:34:28 GMT
+      - Thu, 06 Jun 2013 17:34:38 GMT
       Content-Length:
-      - '671'
+      - '631'
     body:
       encoding: US-ASCII
       string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Header><UserCredentials
         xmlns="https://blackbookws.com/UsedCarWSX"><userid>xxxxx</userid><password>xxxxx</password><customer
-        /><producttype>W</producttype><returncode>20</returncode><returnmessage>VIN
-        not found</returnmessage></UserCredentials></soap:Header><soap:Body><CurrentVINValuesResponse
-        xmlns="https://blackbookws.com/UsedCarWSX"><CurrentVINValuesResult><valueArray
-        /></CurrentVINValuesResult></CurrentVINValuesResponse></soap:Body></soap:Envelope>
+        /><producttype>W</producttype><returncode>0</returncode><returnmessage>success
+        - (series)</returnmessage></UserCredentials></soap:Header><soap:Body><SeriesResponse
+        xmlns="https://blackbookws.com/UsedCarWSX"><SeriesResult><series /></SeriesResult></SeriesResponse></soap:Body></soap:Envelope>
     http_version:
-  recorded_at: Thu, 06 Jun 2013 17:34:28 GMT
+  recorded_at: Thu, 06 Jun 2013 17:34:38 GMT
 recorded_with: VCR 2.5.0
