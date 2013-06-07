@@ -54,7 +54,7 @@ describe BlackBook::UsedCars do
     it "should get the current values" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("value_valid_request") do
-          BlackBook::UsedCars.current_valuation_from_data(2013, 'Ford', 'Fiesta', 'SE', '4D Hatchback', 10_000, 'IL')[:value_array].must_include :bb_value
+          BlackBook::UsedCars.current_valuation_from_data(2013, "Ford", "Fiesta", "SE", "4D Hatchback", 10_000, "IL")[:value_array].must_include :bb_value
         end
       end
     end
@@ -62,7 +62,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when passing bad request data" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("value_savon_error") do
-          proc { BlackBook::UsedCars.current_valuation_from_data(2013, 'Ford', 'Fiesta', 'SE', '4D Hatchback',10_000, 'IL', {country: "INVALID"}) }.must_raise BlackBook::BlackBookError
+          proc { BlackBook::UsedCars.current_valuation_from_data(2013, "Ford", "Fiesta", "SE", "4D Hatchback", 10_000, "IL", { country: "INVALID" }) }.must_raise BlackBook::BlackBookError
         end
       end
     end
@@ -86,7 +86,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when passing bad request data" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("years_savon_error") do
-          proc { BlackBook::UsedCars.years({country: "INVALID"}) }.must_raise BlackBook::BlackBookError
+          proc { BlackBook::UsedCars.years({ country: "INVALID" }) }.must_raise BlackBook::BlackBookError
         end
       end
     end
@@ -110,7 +110,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when passing bad request data" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("make_savon_error") do
-          proc { BlackBook::UsedCars.makes(2013, {country: "INVALID"}) }.must_raise BlackBook::BlackBookError
+          proc { BlackBook::UsedCars.makes(2013, { country: "INVALID" }) }.must_raise BlackBook::BlackBookError
         end
       end
     end
@@ -134,7 +134,7 @@ describe BlackBook::UsedCars do
     it "should get the current years" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("models_valid_request") do
-          BlackBook::UsedCars.models(2013, 'Ford').must_include "Fiesta"
+          BlackBook::UsedCars.models(2013, "Ford").must_include "Fiesta"
         end
       end
     end
@@ -142,7 +142,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when passing bad request data" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("model_savon_error") do
-          proc { BlackBook::UsedCars.models(2013, 'Ford', {country: "INVALID"}) }.must_raise BlackBook::BlackBookError
+          proc { BlackBook::UsedCars.models(2013, "Ford", { country: "INVALID" }) }.must_raise BlackBook::BlackBookError
         end
       end
     end
@@ -150,7 +150,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when no vehicles are found" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("model_error") do
-          proc { BlackBook::UsedCars.models(1864, 'Ford') }.must_raise BlackBook::ModelsNotFound
+          proc { BlackBook::UsedCars.models(1864, "Ford") }.must_raise BlackBook::ModelsNotFound
         end
       end
     end
@@ -166,7 +166,7 @@ describe BlackBook::UsedCars do
     it "should get the current series" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("series_valid_request") do
-          BlackBook::UsedCars.series(2013, 'Ford', 'Fiesta').must_include "SE"
+          BlackBook::UsedCars.series(2013, "Ford", "Fiesta").must_include "SE"
         end
       end
     end
@@ -174,7 +174,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when passing bad request data" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("series_savon_error") do
-          proc { BlackBook::UsedCars.series(2013, 'Ford', 'Fiesta', {country: "INVALID"}) }.must_raise BlackBook::BlackBookError
+          proc { BlackBook::UsedCars.series(2013, "Ford", "Fiesta", { country: "INVALID" }) }.must_raise BlackBook::BlackBookError
         end
       end
     end
@@ -182,7 +182,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when no vehicles are found" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("series_error") do
-          proc { BlackBook::UsedCars.series(1864, 'Ford', 'Fiesta') }.must_raise BlackBook::SeriesNotFound
+          proc { BlackBook::UsedCars.series(1864, "Ford", "Fiesta") }.must_raise BlackBook::SeriesNotFound
         end
       end
     end
@@ -198,7 +198,7 @@ describe BlackBook::UsedCars do
     it "should get the current styles" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("styles_valid_request") do
-          BlackBook::UsedCars.styles(2013, 'Ford', 'Fiesta', 'SE').must_include "4D Hatchback"
+          BlackBook::UsedCars.styles(2013, "Ford", "Fiesta", "SE").must_include "4D Hatchback"
         end
       end
     end
@@ -206,7 +206,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when passing bad request data" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("style_savon_error") do
-          proc { BlackBook::UsedCars.styles(2013, 'Ford', 'Fiesta', 'SE', {country: "INVALID"}) }.must_raise BlackBook::BlackBookError
+          proc { BlackBook::UsedCars.styles(2013, "Ford", "Fiesta", "SE", { country: "INVALID" }) }.must_raise BlackBook::BlackBookError
         end
       end
     end
@@ -214,7 +214,7 @@ describe BlackBook::UsedCars do
     it "should raise an exception when no vehicles are found" do
       VCR.use_cassette("wsdl") do
         VCR.use_cassette("styles_error") do
-          proc { BlackBook::UsedCars.styles(1864, 'Ford', 'Fiesta', 'SE') }.must_raise BlackBook::StylesNotFound
+          proc { BlackBook::UsedCars.styles(1864, "Ford", "Fiesta", "SE") }.must_raise BlackBook::StylesNotFound
         end
       end
     end
