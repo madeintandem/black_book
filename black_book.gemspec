@@ -6,8 +6,8 @@ require 'black_book/version'
 Gem::Specification.new do |spec|
   spec.name          = "black_book"
   spec.version       = BlackBook::VERSION
-  spec.authors       = ["Tony Coconate"]
-  spec.email         = ["me@tonycoconate.com"]
+  spec.authors       = ["Tony Coconate", "Cory Stephenson"]
+  spec.email         = ["me@tonycoconate.com", "aevin@me.com"]
   spec.description   = %q{Provides a ruby interface for the Black Book's API. Read more about it here: http://www.blackbookusa.com}
   spec.summary       = %q{A ruby interface for Black Book's API}
   spec.homepage      = "http://github.com/tonycoco/black_book"
