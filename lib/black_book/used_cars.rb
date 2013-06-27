@@ -24,7 +24,7 @@ module BlackBook
         envelope = response.hash[:envelope]
 
         raise VinNotFound if envelope[:header][:user_credentials][:returncode] == "20"
-        raise BlackBookError, (envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
+        raise BlackBookError.new(envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
 
         envelope[:body][:current_vin_values_response][:current_vin_values_result]
       rescue Savon::SOAPFault => e
@@ -54,7 +54,7 @@ module BlackBook
         envelope = response.hash[:envelope]
 
         raise VehicleNotFound if envelope[:header][:user_credentials][:returncode] == "20"
-        raise BlackBookError, (envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
+        raise BlackBookError.new(envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
 
         envelope[:body][:current_values_response][:current_values_result]
       rescue Savon::SOAPFault => e
@@ -68,7 +68,7 @@ module BlackBook
 
         envelope = response.hash[:envelope]
 
-        raise BlackBookError, (envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
+        raise BlackBookError.new(envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
 
         envelope[:body][:years_response][:years_result][:years][:year]
       rescue Savon::SOAPFault => e
@@ -83,7 +83,7 @@ module BlackBook
 
         envelope = response.hash[:envelope]
 
-        raise BlackBookError, (envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
+        raise BlackBookError.new(envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
         raise MakesNotFound if envelope[:body][:makes_response][:makes_result][:makes].nil?
 
         envelope[:body][:makes_response][:makes_result][:makes][:make]
@@ -100,7 +100,7 @@ module BlackBook
 
         envelope = response.hash[:envelope]
 
-        raise BlackBookError, (envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
+        raise BlackBookError.new(envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
         raise ModelsNotFound if envelope[:body][:models_response][:models_result][:models].nil?
 
         envelope[:body][:models_response][:models_result][:models][:model]
@@ -118,7 +118,7 @@ module BlackBook
 
         envelope = response.hash[:envelope]
 
-        raise BlackBookError, (envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
+        raise BlackBookError.new(envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
         raise SeriesNotFound if envelope[:body][:series_response][:series_result][:series].nil?
 
         envelope[:body][:series_response][:series_result][:series][:vehseries]
@@ -137,7 +137,7 @@ module BlackBook
 
         envelope = response.hash[:envelope]
 
-        raise BlackBookError, (envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
+        raise BlackBookError.new(envelope[:header][:user_credentials][:returnmessage]) if envelope[:header][:user_credentials][:returncode] != "0"
         raise StylesNotFound if envelope[:body][:body_styles_response][:body_styles_result][:styles].nil?
 
         envelope[:body][:body_styles_response][:body_styles_result][:styles][:style]
