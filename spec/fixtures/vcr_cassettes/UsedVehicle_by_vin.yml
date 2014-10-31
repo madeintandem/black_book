@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://test_user:test_password@service.blackbookcloud.com/UsedCarWS/UsedCarWS/UsedVehicle/VIN/2C4RDGBG1CR385500?customerid=test_user
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Content-Length:
+      - '5681'
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - "-1"
+      Server:
+      - Microsoft-IIS/8.0
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 31 Oct 2014 19:29:52 GMT
+    body:
+      encoding: UTF-8
+      string: '{"warning_count":0,"error_count":0,"message_list":[],"token_expiration_minutes":0,"used_vehicles":{"used_vehicle_list":[{"publish_date":"10/31/2014","data_freq":"D","state":"NT","country":"US","vin":"2C4RDGBGC","uvc":"2012240049","groupnum":"7165","model_year":"2012","make":"Dodge","model":"Grand
+        Caravan","series":"SE","style":"Wagon","mileage_cat":"B","class_code":"S","class_name":"Passenger
+        Van","description_score":"","first_values_flag":false,"risk_score":"","base_whole_xclean":14850,"mileage_whole_xclean":0,"add_deduct_whole_xclean":0,"regional_whole_xclean":0,"adjusted_whole_xclean":14850,"base_whole_clean":13450,"mileage_whole_clean":0,"add_deduct_whole_clean":0,"regional_whole_clean":0,"adjusted_whole_clean":13450,"base_whole_avg":11000,"mileage_whole_avg":0,"add_deduct_whole_avg":0,"regional_whole_avg":0,"adjusted_whole_avg":11000,"base_whole_rough":8900,"mileage_whole_rough":0,"add_deduct_whole_rough":0,"regional_whole_rough":0,"adjusted_whole_rough":8900,"base_retail_xclean":17975,"mileage_retail_xclean":0,"add_deduct_retail_xclean":0,"regional_retail_xclean":0,"adjusted_retail_xclean":17975,"base_retail_clean":16325,"mileage_retail_clean":0,"add_deduct_retail_clean":0,"regional_retail_clean":0,"adjusted_retail_clean":16325,"base_retail_avg":13600,"mileage_retail_avg":0,"add_deduct_retail_avg":0,"regional_retail_avg":0,"adjusted_retail_avg":13600,"base_retail_rough":10900,"mileage_retail_rough":0,"add_deduct_retail_rough":0,"regional_retail_rough":0,"adjusted_retail_rough":10900,"base_tradein_clean":13870,"mileage_tradein_clean":0,"add_deduct_tradein_clean":0,"regional_tradein_clean":0,"adjusted_tradein_clean":13870,"base_tradein_avg":11735,"mileage_tradein_avg":0,"add_deduct_tradein_avg":0,"regional_tradein_avg":0,"adjusted_tradein_avg":11735,"base_tradein_rough":8410,"mileage_tradein_rough":0,"add_deduct_tradein_rough":0,"regional_tradein_rough":0,"adjusted_tradein_rough":8410,"base_finadv":14200,"mileage_finadv":0,"add_deduct_finadv":0,"regional_finadv":0,"adjusted_finadv":14200,"region2":100,"region3":150,"region4":-200,"region5":200,"region6":-100,"msrp":20995,"retail_equipped":22925,"price_includes":"AT
+        AC 6CY","wheel_base":121.2,"tire_size":"235/60R16","gvw":6050.0,"tow_cap":"3,600","seat_cap":"7","seats":"Buckets,
+        low-back; Manual","fuel_type":"Flex","fuel_cap":"20.0","fuel_delivery":"SMPI","hwy_mpg":"25","city_mpg":"17","engine_description":"3.6L
+        V6 MPI DOHC VVT Flex","cylinders":"6","engine_displacement":"3.6L","base_hp":"283
+        @ 6300","taxable_hp":34.3,"torque":"260 @ 4300","transmission":"A","drivetrain":"FWD","num_gears":"6","ext_doors":"Sliding,
+        side; Sliding, dual","airbags":"Side Curtain","basic_warranty":"3-year/36,000-mile,
+        Limited","powertrain_warranty":"5-year/100,000-mile, Limited","add_deduct_list":[{"uoc":"08","name":"Power
+        Driver Seat","xclean":275,"clean":275,"avg":275,"rough":275,"auto":"N","resid12":250,"resid24":225,"resid30":200,"resid36":200,"resid42":175,"resid48":175,"resid60":150,"resid72":125},{"uoc":"N5","name":"Navigation
+        System","xclean":700,"clean":700,"avg":700,"rough":700,"auto":"N","resid12":550,"resid24":400,"resid30":325,"resid36":250,"resid42":175,"resid48":100,"resid60":0,"resid72":0},{"uoc":"20","name":"Leather","xclean":950,"clean":950,"avg":950,"rough":950,"auto":"N","resid12":875,"resid24":800,"resid30":750,"resid36":725,"resid42":675,"resid48":650,"resid60":575,"resid72":500},{"uoc":"1S","name":"5
+        Passenger","xclean":-600,"clean":-600,"avg":-600,"rough":-600,"auto":"N","resid12":-500,"resid24":-400,"resid30":-350,"resid36":-300,"resid42":-250,"resid48":-200,"resid60":-100,"resid72":0}],"mileage_list":[{"model_year":"2012","range_begin":1,"range_end":9000,"xclean":350,"clean":475,"avg":625,"rough":0,"finadv":400,"mileage_cat":"B"},{"model_year":"2012","range_begin":9001,"range_end":12000,"xclean":250,"clean":350,"avg":475,"rough":0,"finadv":300,"mileage_cat":"B"},{"model_year":"2012","range_begin":12001,"range_end":18000,"xclean":175,"clean":250,"avg":350,"rough":0,"finadv":200,"mileage_cat":"B"},{"model_year":"2012","range_begin":18001,"range_end":24000,"xclean":0,"clean":175,"avg":250,"rough":0,"finadv":75,"mileage_cat":"B"},{"model_year":"2012","range_begin":24001,"range_end":30000,"xclean":-550,"clean":0,"avg":175,"rough":0,"finadv":-275,"mileage_cat":"B"},{"model_year":"2012","range_begin":30001,"range_end":40000,"xclean":-1100,"clean":-575,"avg":0,"rough":0,"finadv":-850,"mileage_cat":"B"},{"model_year":"2012","range_begin":40001,"range_end":50000,"xclean":-1675,"clean":-1150,"avg":-575,"rough":0,"finadv":-1400,"mileage_cat":"B"},{"model_year":"2012","range_begin":50001,"range_end":60000,"xclean":-2275,"clean":-1750,"avg":-1200,"rough":-650,"finadv":-2000,"mileage_cat":"B"},{"model_year":"2012","range_begin":60001,"range_end":70000,"clean":-2325,"avg":-1750,"rough":-1225,"finadv":-2575,"mileage_cat":"B"},{"model_year":"2012","range_begin":70001,"range_end":80000,"avg":-2250,"rough":-1825,"finadv":-3150,"mileage_cat":"B"},{"model_year":"2012","range_begin":80001,"range_end":90000,"avg":-2850,"rough":-2250,"finadv":-3700,"mileage_cat":"B"},{"model_year":"2012","range_begin":90001,"range_end":100000,"avg":-3500,"rough":-2900,"finadv":-4275,"mileage_cat":"B"},{"model_year":"2012","range_begin":100001,"range_end":115000,"avg":-4250,"rough":-3625,"finadv":-4975,"mileage_cat":"B"},{"model_year":"2012","range_begin":115001,"range_end":130000,"avg":-4900,"rough":-4250,"finadv":-5800,"mileage_cat":"B"},{"model_year":"2012","range_begin":130001,"range_end":999999,"avg":-5800,"rough":-5175,"finadv":-6600,"mileage_cat":"B"}],"model_number_list":["RTKH53"]}],"template":1,"version":1,"data_included":true,"data_available":true}}'
+    http_version:
+  recorded_at: Fri, 31 Oct 2014 19:30:51 GMT
+recorded_with: VCR 2.9.3

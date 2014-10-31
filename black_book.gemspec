@@ -18,14 +18,17 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "symboltable"
+  spec.add_dependency "json"
+  spec.add_dependency "rest-client", "~> 1.7"
+  spec.add_dependency "symboltable", "~> 1.0"
 
+  spec.add_development_dependency "awesome_print", "~> 1.2"
   spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "pry-nav"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "vcr"
-  spec.add_development_dependency "webmock", "~> 1.10.0" # Locked at 1.10.x to prevent VCR warnings
-  spec.add_development_dependency "mocha"
+  spec.add_development_dependency "fuubar", "~> 2.0"
+  spec.add_development_dependency "pry", "~> 0.10"
+  spec.add_development_dependency "pry-nav", "~> 0.2"
+  spec.add_development_dependency "rake", "~> 10.3"
+  spec.add_development_dependency "rspec", "~> 3.1"
+  spec.add_development_dependency "vcr", "~> 2.9"
+  spec.add_development_dependency "webmock", "~> 1.10"
 end
