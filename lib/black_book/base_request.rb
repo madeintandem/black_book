@@ -1,33 +1,21 @@
-require "savon"
-
 module BlackBook
   class BaseRequest
     class << self
-      def request(operation, data)
-        client.call(operation, message: data)
-      end
-
-      def client
-        @@client ||= Savon.client(wsdl: wsdl_url, soap_header: credentials, log: false)
-      end
-
-      def operations
-        @@operations ||= client.operations
+      def base_url
+        "https://#{credentials}@service.blackbookcloud.com/UsedCarWS/UsedCarWS"
       end
 
       def credentials
-        @@credentials ||= %|<UserCredentials xmlns="https://blackbookws.com/UsedCarWSX">
-            <userid>#{BlackBook.config.user_id}</userid>
-            <password>#{BlackBook.config.password}</password>
-            <customer/>
-            <producttype>W</producttype>
-            <returncode>0</returncode>
-            <returnmessage/>
-          </UserCredentials>|
+        "#{BlackBook.config.user_id}:#{BlackBook.config.password}"
       end
 
-      def wsdl_url
-        raise NotImplementedError, "should have a WSDL URL"
+      def request(url, options={})
+        request_options = default_options.merge(options).map { |k,v| "#{k}=#{v}" }.join("&")
+        RestClient.get "#{url}?#{request_options}", accept: :json
+      end
+
+      def default_options
+        { customerid: BlackBook.config.user_id }
       end
     end
   end
