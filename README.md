@@ -1,7 +1,7 @@
 # BlackBook
 
 Provides a ruby interface for the Black Book's API.
-Read more about it here: http://www.blackbookusa.com
+Read more about it here: http://www.blackbookauto.com
 
 ## Installation
 
