@@ -11,3 +11,11 @@ VCR.configure do |c|
   c.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   c.hook_into :webmock
 end
+
+
+def set_credentials(user_id="test_user", password="test_password")
+  BlackBook.configure do |config|
+    config.user_id = user_id
+    config.password = password
+  end
+end

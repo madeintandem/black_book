@@ -2,38 +2,43 @@ require "spec_helper"
 
 describe BlackBook::BaseRequest do
   let(:subject) { BlackBook::BaseRequest }
-  before do
-    BlackBook.configure do |config|
-      config.user_id = "user_id"
-      config.password = "password"
-    end
-  end
 
-  describe "::credentials" do
-    it "has the config credentials" do
-      expect(subject.credentials).to eq("#{BlackBook.config.user_id}:#{BlackBook.config.password}")
-    end
+  before do
+    set_credentials
   end
 
   describe "::base_url" do
     it "has a base_url" do
-      expect(subject.base_url).to eq("https://#{subject.credentials}@service.blackbookcloud.com/UsedCarWS/UsedCarWS/")
+      expect(subject.base_url).to eq("https://service.blackbookcloud.com/UsedCarWS/UsedCarWS")
     end
   end
 
   describe "::request" do
-    it "fires a rest request with json headers" do
-      allow(RestClient).to receive(:get)
+    context "when credentials are missing" do
+      it "throws an error if no credentials are set" do
+        set_credentials(nil, nil)
+        expect{ subject.request("test") }.to raise_error("Credentials not set")
+      end
+    end
 
-      expect(RestClient).to receive(:get).with("test_url?customerid=#{BlackBook.config.user_id}&test=options", accept: :json)
-
-      subject.request("test_url", { test: :options })
+    context "with valid credentials" do
+      it "executes the request" do
+        VCR.use_cassette("BaseRequest.request") do
+          response = subject.request("#{subject.base_url}/UsedVehicle/VIN/2C4RDGBG1CR385500")
+          expect(JSON.parse(response)).to have_key("used_vehicles")
+        end
+      end
     end
   end
 
-  describe "::default_options" do
-    it "has default options" do
-      expect(subject.default_options).to eq(customerid: BlackBook.config.user_id)
+  describe "::credentials_missing?" do
+    it "returns true if no credentials are set" do
+      set_credentials(nil, nil)
+      expect(subject.credentials_missing?).to eq(true)
+    end
+
+    it "returns false if credentials are set" do
+      expect(subject.credentials_missing?).to eq(false)
     end
   end
 end

@@ -3,16 +3,13 @@ require "spec_helper"
 describe BlackBook::UsedVehicle do
   let(:subject) { BlackBook::UsedVehicle }
 
-  describe "::by_vin" do
-    before do
-      BlackBook.configure do |config|
-        config.user_id = "test_user"
-        config.password = "test_password"
-      end
-    end
+  before do
+    set_credentials
+  end
 
+  describe "::by_vin" do
     it "is a BaseRequest" do
-      expect(subject).to be_a(BlackBook::BaseRequest)
+      expect(BlackBook::UsedVehicle.new).to be_a(BlackBook::BaseRequest)
     end
 
     it "has an endpoint of UsedVehicle" do

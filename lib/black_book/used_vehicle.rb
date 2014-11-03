@@ -1,5 +1,6 @@
 require "rest_client"
 
+
 module BlackBook
   class UsedVehicle < BaseRequest
     class << self
