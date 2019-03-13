@@ -17,7 +17,7 @@ describe BlackBook::UsedVehicle do
     end
 
     it "returns a Hash from the response json" do
-      VCR.use_cassette("UsedVehicle.by_vin") do
+      VCR.use_cassette("UsedVehicle_by_vin") do
         response = BlackBook::UsedVehicle.by_vin("2C4RDGBG1CR385500")
         expect(response["used_vehicles"]).not_to be_empty
       end

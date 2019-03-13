@@ -23,7 +23,7 @@ describe BlackBook::BaseRequest do
 
     context "with valid credentials" do
       it "executes the request" do
-        VCR.use_cassette("BaseRequest.request") do
+        VCR.use_cassette("BaseRequest_request") do
           response = subject.request("#{subject.base_url}/UsedVehicle/VIN/2C4RDGBG1CR385500")
           expect(JSON.parse(response)).to have_key("used_vehicles")
         end
